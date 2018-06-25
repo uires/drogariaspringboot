@@ -1,6 +1,7 @@
 package br.com.drogaria.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -12,7 +13,7 @@ public class DrogariaController{
 	}
 	
 	@RequestMapping("/gerenciamento-medicamento")
-	public String gerenciamento() {
+	public String gerenciamento(Model modelo) {
 		return "gerenciamento-medicamento";
 	}
 }
