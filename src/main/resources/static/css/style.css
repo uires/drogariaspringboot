@@ -1,0 +1,37 @@
+@charset "UTF-8";
+body{
+	margin: 0;
+	padding: 0;
+}
+.barra-superior{
+	margin: auto;
+	width: 1020px;
+	height: 40px;
+	display: flex;
+	background-color: #0099CC;
+	justify-content: center;
+	align-content: space-between;
+}
+.barra-superior-estilo{
+
+}
+.barra-superior-estilo ul, li{
+	margin: 0;
+	padding: 0;
+	color: white;
+}
+.barra-superior-estilo li{
+	list-style: none;
+	float: left;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.barra-superior-estilo li a{
+	font-style: normal;
+	color: white;
+	text-decoration: none;
+	line-height: 40px;
+}
+.butao-menu{
+	background-color: #457A8C;
+}
