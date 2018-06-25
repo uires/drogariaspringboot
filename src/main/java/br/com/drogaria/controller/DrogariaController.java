@@ -11,4 +11,8 @@ public class DrogariaController{
 		return "index";
 	}
 	
+	@RequestMapping("/gerenciamento-medicamento")
+	public String gerenciamento() {
+		return "gerenciamento-medicamento";
+	}
 }
