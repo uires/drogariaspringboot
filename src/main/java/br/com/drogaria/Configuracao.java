@@ -18,7 +18,7 @@ public class Configuracao {
 	}
 
 	/*
-	*	Bean para ersistência dos dados, já que não tenho implementei o application.properties 
+	*	Bean para persistência dos dados, já que não implementei o arquivo application.properties 
 	*/
 	@Bean
 	public DataSource data() {

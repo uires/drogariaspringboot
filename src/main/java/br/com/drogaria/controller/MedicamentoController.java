@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import br.com.drogaria.model.Medicamento;
-import br.com.drogaria.repository.MedicamentoRepository;
+import br.com.drogaria.services.MedicamentoService;
 
 @Controller
 public class MedicamentoController {
+	
 	@Autowired
-	private MedicamentoRepository repository;
+	private MedicamentoService service;
 	
 	@RequestMapping("/")
 	public String indexPage() {
@@ -22,8 +23,7 @@ public class MedicamentoController {
 
 	@RequestMapping("gerenciamento-medicamento")
 	public String gereciamentoPage(Model modelo) {
-		Iterable<Medicamento> medicamentos = repository.findAll();
-		modelo.addAttribute("medicamentos", medicamentos);
+		modelo.addAttribute("medicamentos", service.selectAllMedicamentos());
 		return "gerenciamento-medicamento";
 	}
 	
@@ -31,8 +31,8 @@ public class MedicamentoController {
 	public String cadastraMedicamento(@RequestParam("nome") String nome, @RequestParam("quantidade") int quantidade,
 			@RequestParam("preco") double preco, @RequestParam("substancia") String substancias,
 			@RequestParam("pesoliquido") double pesoliquido, Model modelo) {
-		repository.save(new Medicamento(nome, quantidade, preco, substancias, pesoliquido));
-		modelo.addAttribute("medicamentos", repository.findAll());
+		service.cadastraMedicamento(new Medicamento(nome, quantidade, preco, substancias, pesoliquido));
+		modelo.addAttribute("medicamentos", service.selectAllMedicamentos());
 		
 		return "gerenciamento-medicamento";
 	}

@@ -12,7 +12,7 @@ import br.com.drogaria.repository.MedicamentoRepository;
 **/
 
 @Service
-public class MedicamentoService {
+public class MedicamentoService{
 	@Autowired
 	public MedicamentoRepository repository;
 	
