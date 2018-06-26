@@ -33,7 +33,6 @@ public class MedicamentoController {
 			@RequestParam("pesoliquido") double pesoliquido, Model modelo) {
 		service.cadastraMedicamento(new Medicamento(nome, quantidade, preco, substancias, pesoliquido));
 		modelo.addAttribute("medicamentos", service.selectAllMedicamentos());
-		
 		return "gerenciamento-medicamento";
 	}
 	
