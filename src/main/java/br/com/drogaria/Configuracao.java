@@ -10,10 +10,16 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 @SpringBootApplication
 public class Configuracao {
 
+	/*
+	*	Me'todo main do spring, para chamar suas respectivas dependências e chamar o container(tomcat)  
+	*/
 	public static void main(String[] args) {
 		SpringApplication.run(Configuracao.class, args);
 	}
 
+	/*
+	*	Bean para ersistência dos dados, já que não tenho implementei o application.properties 
+	*/
 	@Bean
 	public DataSource data() {
 		DriverManagerDataSource data = new DriverManagerDataSource();
