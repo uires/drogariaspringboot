@@ -21,7 +21,7 @@ public class DrogariaController {
 	@RequestMapping("gerenciamento-medicamento")
 	public String gereciamentoPage(Model modelo) {
 		Iterable<Medicamento> medicamentos = repository.findAll();
-		
+		modelo.addAttribute("medicamentos", medicamentos);
 		return "gerenciamento-medicamento";
 	}
 	
