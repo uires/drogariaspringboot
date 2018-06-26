@@ -37,7 +37,7 @@
 						<td><span th:text="${medicamento.Nome}"></span></td>
 						<td><span th:text="${medicamento.quantidade}"></span> un.</td>
 						<td>R$ <span th:text="${medicamento.preco}"></span></td>
-						<td><span th:text="${medicamento.substancias}"></span></td>
+						<td style="width:400px;"><span th:text="${medicamento.substancias}"></span></td>
 						<td><span th:text="${medicamento.pesoLiquido}"></span>g.</td>
 					</tr>
 				</tbody>
@@ -58,7 +58,7 @@
 					<input type="text" class="form-control" name="preco" placeholder="R$ 9.99" />
 					
 					<label for="exampleFormControlInput1">Substâncias</label> 
-					<input type="text" class="form-control" name="substancia" placeholder="ex: cloridrato de metformina " />
+					<textarea  rows="4" cols="50" class="form-control" name="substancia" placeholder="ex: cloridrato de metformina" ></textarea>
 					
 					<label for="exampleFormControlInput1">Peso Líquido</label> 
 					<input type="text" class="form-control" name="pesoliquido" placeholder="12.1 g" /><br />
