@@ -17,6 +17,18 @@ public class Medicamento {
 	private String substancias;
 	private double pesoLiquido;
 
+	public Medicamento() {
+		
+	}
+	
+	public Medicamento(String nome, int quantidade, double preco, String substancias, double pesoLiquido) {
+		this.nome = nome;
+		this.quantidade = quantidade;
+		this.preco = preco;
+		this.substancias = substancias;
+		this.pesoLiquido = pesoLiquido;
+	}
+
 	public Long getId() {
 		return id;
 	}
