@@ -28,7 +28,11 @@ public class DrogariaController {
 	}
 	
 	@RequestMapping(value = "cadastrar", method = RequestMethod.POST)
-	public String cadastraMedicamento(@RequestParam("nome") String nome) {
+	public String cadastraMedicamento(@RequestParam("nome") String nome, @RequestParam("quantidade") int quantidade,
+			@RequestParam("preco") double preco, @RequestParam("substancia") String substancias,
+			@RequestParam("pesoliquido") double pesoliquido, Model modelo) {
+		repository.save(new Medicamento(nome, quantidade, preco, substancias, pesoliquido));
+		modelo.addAttribute("medicamentos", repository.findAll());
 		
 		return "gerenciamento-medicamento";
 	}
