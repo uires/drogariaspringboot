@@ -4,35 +4,69 @@
 <meta charset="UTF-8" />
 <title>Drogaria - Gerenciamento</title>
 <link href="css/style.css" rel="stylesheet" />
+<link href="css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
 	<div class="barra-superior">
-		<div class="barra-superior-estilo">
-			<ul>
-				<li class="butao-menu"><a href="index">Home</a></li>
-				<li class=""><a href="gerenciamento-medicamentos">Gerenciamento</a></li>
-			</ul>
-		</div>
+		<div class="barra-superior-estilo"></div>
 	</div>
-	<div class="tabela-div">
-		<table>
-			<tr>
-				<th> Codigo </th>
-				<th> Nome </th>
-				<th> Quantidade </th>
-				<th> Preco </th>
-				<th> Substancias </th>
-				<th> Peso Liquido </th>
-			</tr>
-			<tr th:each="medicamento : ${medicamentos}">
-				<td><span th:text="${medicamento.id}"></span></td>
-				<td><span th:text="${medicamento.Nome}"></span></td>
-				<td><span th:text="${medicamento.quantidade}"></span></td>
-				<td>R$ <span th:text="${medicamento.preco}"></span></td>
-				<td style="width:100px;"><span th:text="${medicamento.substancias}"></span></td>
-				<td><span th:text="${medicamento.pesoLiquido}">g</span></td>
-			</tr>
-		</table>
+	<div>
+		<ul class="nav justify-content-center">
+			<li class="nav-item"><a class="nav-link active" href="index">Home</a></li>
+			<li class="nav-item"><a class="nav-link"
+				href="gerenciamento-medicamento">Gerenciamento</a></li>
+		</ul>
+	</div>
+
+	<div class="container-fluid">
+		<div class="div-table-control table-responsive">
+			<table class="table">
+				<thead class="thead-light">
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Nome</th>
+						<th scope="col">Quantidade</th>
+						<th scope="col">Preço</th>
+						<th scope="col">Substâncias</th>
+						<th scope="col">Peso Líquido</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="medicamento : ${medicamentos}">
+						<td><span th:text="${medicamento.id}"></span></td>
+						<td><span th:text="${medicamento.Nome}"></span></td>
+						<td><span th:text="${medicamento.quantidade}"></span> un.</td>
+						<td>R$ <span th:text="${medicamento.preco}"></span></td>
+						<td><span th:text="${medicamento.substancias}"></span></td>
+						<td><span th:text="${medicamento.pesoLiquido}"></span>g.</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<hr />
+		<div class="control-form">
+			<form action="cadastrar" method="POST">
+				<div class="form-group">
+				
+					<label for="exampleFormControlInput1">Nome</label> 
+					<input type="text" class="form-control" id="exampleFormControlInput1" name="nome" placeholder="" />
+					
+					<label for="exampleFormControlInput1">Quantidade</label> 
+					<input type="text" class="form-control" id="exampleFormControlInput1" name="quantidade" placeholder="100 un." />
+					
+					<label for="exampleFormControlInput1">Preço</label> 
+					<input type="text" class="form-control" name="preco" placeholder="R$ 9.99" />
+					
+					<label for="exampleFormControlInput1">Substâncias</label> 
+					<input type="text" class="form-control" name="substancia" placeholder="ex: cloridrato de metformina " />
+					
+					<label for="exampleFormControlInput1">Peso Líquido</label> 
+					<input type="text" class="form-control" name="pesoliquido" placeholder="12.1 g" /><br />
+					
+					<button class="btn btn-primary" type="submit">Cadastrar</button>					
+				</div>
+			</form>
+		</div>
 	</div>
 </body>
 </html>
