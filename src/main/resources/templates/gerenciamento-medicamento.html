@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
 <title>Drogaria - Gerenciamento</title>
@@ -14,7 +14,6 @@
 			</ul>
 		</div>
 	</div>
-
 	<div class="tabela-div">
 		<table>
 			<tr>
@@ -23,7 +22,15 @@
 				<th> Quantidade </th>
 				<th> Preco </th>
 				<th> Substancias </th>
-				<th> Quantidade </th>
+				<th> Peso Liquido </th>
+			</tr>
+			<tr th:each="medicamento : ${medicamentos}">
+				<td><span th:text="${medicamento.id}"></span></td>
+				<td><span th:text="${medicamento.Nome}"></span></td>
+				<td><span th:text="${medicamento.quantidade}"></span></td>
+				<td>R$ <span th:text="${medicamento.preco}"></span></td>
+				<td style="width:100px;"><span th:text="${medicamento.substancias}"></span></td>
+				<td><span th:text="${medicamento.pesoLiquido}">g</span></td>
 			</tr>
 		</table>
 	</div>
